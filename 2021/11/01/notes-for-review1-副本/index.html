@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Wonpeach的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Wonpeach的博客"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Wonpeach的博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="title: Deep learning on mobile devices: A review(移动设备上的深度学习—综述) Deep learning on mobile devices: A review(移动设备上的深度学习—综述)移动设备上实现深度学习的优点包括通信带宽低，云计算资源成本小，响应时间短，数据私密性好。"><meta property="og:type" content="blog"><meta property="og:title" content="Wonpeach的博客"><meta property="og:url" content="https://wonpeach.github.io/2021/11/01/notes-for-review1-%E5%89%AF%E6%9C%AC/"><meta property="og:site_name" content="Wonpeach的博客"><meta property="og:description" content="title: Deep learning on mobile devices: A review(移动设备上的深度学习—综述) Deep learning on mobile devices: A review(移动设备上的深度学习—综述)移动设备上实现深度学习的优点包括通信带宽低，云计算资源成本小，响应时间短，数据私密性好。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://wonpeach.github.io/img/og_image.png"><meta property="article:published_time" content="2021-11-01T12:10:27.270Z"><meta property="article:modified_time" content="2021-11-01T12:18:03.049Z"><meta property="article:author" content="Wonpeach"><meta property="article:tag" content="编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://wonpeach.github.io/2021/11/01/notes-for-review1-%E5%89%AF%E6%9C%AC/"},"headline":"Wonpeach的博客","image":["https://wonpeach.github.io/img/og_image.png"],"datePublished":"2021-11-01T12:10:27.270Z","dateModified":"2021-11-01T12:18:03.049Z","author":{"@type":"Person","name":"Wonpeach"},"publisher":{"@type":"Organization","name":"Wonpeach的博客","logo":{"@type":"ImageObject","url":"https://wonpeach.github.io/img/mylogo.svg"}},"description":"title: Deep learning on mobile devices: A review(移动设备上的深度学习—综述) Deep learning on mobile devices: A review(移动设备上的深度学习—综述)移动设备上实现深度学习的优点包括通信带宽低，云计算资源成本小，响应时间短，数据私密性好。"}</script><link rel="canonical" href="https://wonpeach.github.io/2021/11/01/notes-for-review1-%E5%89%AF%E6%9C%AC/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/mylogo.svg" alt="Wonpeach的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/Wonpeach"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-11-01T12:10:27.270Z" title="2021/11/1 下午8:10:27">2021-11-01</time>发表</span><span class="level-item"><time dateTime="2021-11-01T12:18:03.049Z" title="2021/11/1 下午8:18:03">2021-11-01</time>更新</span><span class="level-item">1 小时读完 (大约7834个字)</span></div></div><div class="content"><p>title: Deep learning on mobile devices: A review(移动设备上的深度学习—综述)</p>
+<h2 id="Deep-learning-on-mobile-devices-A-review-移动设备上的深度学习—综述"><a href="#Deep-learning-on-mobile-devices-A-review-移动设备上的深度学习—综述" class="headerlink" title="Deep learning on mobile devices: A review(移动设备上的深度学习—综述)"></a>Deep learning on mobile devices: A review(移动设备上的深度学习—综述)</h2><p>移动设备上实现深度学习的优点包括通信带宽低，云计算资源成本小，响应时间短，数据私密性好。</p>
+<span id="more"></span>
+
+<p>深度学习和推理在移动设备上的优势有四个方面:<br>1)节省通信带宽。在移动设备上完成的计算越多，发送到云端的数据就越少。<br>2)降低云计算资源成本。对于某些应用程序来说，维护甚至租用云计算资源的成本可能令人望而却步。随着移动设备的计算能力越来越强，移动设备上的计算成为可能。<br>3)响应时间快。如果所有计算都能在本地执行，那么就不会有通信时间的开销，也不会有服务器可靠性的问题。对于某些应用程序，例如医疗保健和军事领域，此响应时间非常关键。<br>4)移动计算将感知数据保存在本地设备上，大大提高了用户数据的隐私性。对于家庭机器人应用来说尤其如此。</p>
+<h3 id="1-移动深度学习硬件架构"><a href="#1-移动深度学习硬件架构" class="headerlink" title="1.移动深度学习硬件架构"></a>1.移动深度学习硬件架构</h3><p><strong>1.CPU</strong></p>
+<ul>
+<li>使用高度优化的线性代数库LAPACK/BLAS，大多数现有的深度学习框架已经考虑到这一点[1];</li>
+<li>充分利用多核多线程cpu进行并行计算;</li>
+<li>利用CPU厂商专用的数学库;</li>
+<li>对模型大小、数值精度、计算速度和系统性能进行权衡研究</li>
+</ul>
+<p><strong>2.GPUs and Mobile GPUs</strong></p>
+<p>​    GPU在物理设计上是一种高度并行的处理器。它通常包含数千个重复的小核，这使得在矩阵上执行某些类型的重复计算比一般用途的cpu效率更高。</p>
+<p><strong>3.FPGA</strong></p>
+<p>​    CPU是用于非常通用的计算，ASIC几乎是专门用于特定的应用，而FPGA则介于两者之间。fpga可以被“固件”(重新)编程，以非常高效地执行许多特定的应用程序。它在系统开发时间和功耗方面也处于中间位置。</p>
+<p><strong>4.ASIC和TPU</strong></p>
+<p>​    ASIC在为应用设计和制造特定芯片方面比FPGA更进一步。它有潜力实现更好的SWAP(尺寸、质量与功耗)，但代价是长期的开发时间。许多模拟、数字、混合信号、忆阻和尖峰电路被设计来模拟听觉、视觉和大脑功能。有许多asic是为人工智能应用开发的。<br>​    TPU是谷歌专门为神经网络机器学习开发的。它被使用在最近的AlphaGo对李世石的人机围棋比赛中。虽然没有商业可用，但TPU提供给机器学习研究人员免费试用，并可通过其云计算服务访问。</p>
+<p><strong>5.移动深度学习的CPU、GPU、FPGA、ASIC比较</strong></p>
+<p>​    如前所述，CPU和GPU是通用计算平台，因此提供了最大的灵活性。深度学习应用的早期算法性能研究应该利用cpu和gpu来初步了解可达到的性能。cpu和gpu支持全精度计算，可以提供计算密集型模型，这通常意味着可以实现更高的预测精度。但是，gpu和cpu的能效较低。asic可以更节能，因为硬件是专门为特定的计算而设计的。然而，ASIC芯片的设计和开发可能非常耗时。因此，只有当算法研究已经确定，系统的功耗预算非常低时，才使用专用集成电路。fpga提供了功耗、预测精度和系统开发速度之间的折中。</p>
+<h3 id="2-移动深度学习平台和库"><a href="#2-移动深度学习平台和库" class="headerlink" title="2.移动深度学习平台和库"></a>2.移动深度学习平台和库</h3><h4 id="2-1利用云人工智能服务构建移动深度学习解决方案"><a href="#2-1利用云人工智能服务构建移动深度学习解决方案" class="headerlink" title="2.1利用云人工智能服务构建移动深度学习解决方案"></a>2.1利用云人工智能服务构建移动深度学习解决方案</h4><p>​    如果云上的深度学习适合应用程序，那么在移动设备上部署深度学习能力的最快方法就是利用许多现有的云人工智能api。在这种情况下，移动设备充当传感器和用户界面。这些api在机器学习、语音识别、计算机视觉、自然语言处理、人工智能助手、知识发现、个性和情感分析以及搜索等方面提供了随时可用的人工智能能力。<br>​    一些深度学习应用程序，或者至少是推理部分，需要在移动设备上实现，而不依赖于云机器学习。许多深度学习平台仍可用于移动应用程序。<strong>以下是一些最著名的移动深度学习平台:</strong></p>
+<ul>
+<li><strong>TensorFlow  Lite</strong>来自谷歌:TensorFlow是谷歌Brain团队开发的一个开源工具，用于深度学习模型的训练和部署。其灵活的架构允许部署到各种平台，从CPU, GPU,  TPU，移动和边缘设备。对于初学者来说，Keras是一个简单的python API，可以使用TensorFlow来构建模型和运行评估。TensorFlow  Lite是在移动和嵌入式设备上运行TensorFlow模型的解决方案。它经过了精确、低延迟、小模型尺寸和可移植到Android、iOS和其他物联网(IoT)设备的优化。</li>
+<li>来自Facebook的<strong>Caffe2</strong>:Caffe2是一个轻量级的、模块化的、可扩展的深度学习框架。它提供跨平台库，用于在云或移动设备上部署。Caffe模型可以小于1MB的二进制大小，并且是为了提高速度而构建的。支持ARM  CPU, iPhone GPU, Android GPU。此外，它还支持导入使用CNTK和PyTorch训练的模型。</li>
+<li><strong>Core ML for IOS</strong>: Core machine learning是苹果公司为IOS 11开发的。它建立在低级原语之上:加速基本神经网络子程序(BNNS)，金属性能着色器(MPS)自动最小化内存占用和功耗。它直接支持Keras, Caffe,  scikit -learn, XGGoost和LibSVM机器学习工具[Keras, Caffe, scikit, XGGoost,  LibSVM]。此外，使用Caffe和TensorFlow模型构建的模型可以在几行代码中转换为CoreML模型。</li>
+<li><strong>高通骁龙神经处理SDK</strong>:它被设计用于运行在高通骁龙移动平台上的Caffe，Caffe2,ONNX，或TensorFlow训练的DNN模型。它能自动识别出最佳的目标核进行推理，无论是CPU、GPU还是DSP,如今大约有一半的安卓手机使用了Snapdragon芯片。</li>
+<li><strong>DeepLearningKit for Apple Devices</strong>: DeepLearningKit是一个DL框架，适用于电视(TV)、iOS  (iPhone和iPad)和OS X  (MacBook和iMac)。它支持CNN在Caffe训练的模型。它运行在移动GPU上。它是快速的，但自2016年以来就没有维持过。</li>
+<li><strong>MACE</strong> (Mobile AI Compute Engine):  MACE是针对移动异构计算平台优化的深度学习推理框架。它不仅支持广泛的模型形成，如TensorFlow、Caffe和ONNx，而且还具有保护模型的技术，如将模型转换为c++代码。它优化了运行时、内存使用、库占用和UI响应。</li>
+<li><strong>Paddle-Mobile</strong>: Paddle-Mobile是一个更大的深度学习项目PaddlePaddle的一部分，专注于嵌入式平台。支持ARM CPU、Mali  GPU、Android GPU/GPU、iOS、基于fpga的开发板、Raspberry Pi等ARM- linux开发板。</li>
+</ul>
+<p><strong>支持IOS移动系统的：</strong>TensorFlow 、Caffe2、CoreML、DeepLearningKit</p>
+<p><strong>支持Android移动系统的：</strong>TensorFlow、Caffe2、Snapdragon</p>
+<h4 id="2-2移动深度学习库"><a href="#2-2移动深度学习库" class="headerlink" title="2.2移动深度学习库"></a>2.2移动深度学习库</h4><ul>
+<li> <strong>Keras</strong>。 <strong>一些深度机器学习工具包</strong>，如TensorFlow，要求用户具有非常好的机器学习和软件工程知识。同时具备这两种技能的用户非常有限，因此ML的采用非常缓慢。<strong>Keras的想法是极大地简化DL的学习和部署。通过设计一个易于使用的高级API并隐藏所有不必要的机器学习和软件细节</strong>，Keras  python允许用户使用TensorFlow、CNTK或Theano，而无需通过学习曲线来详细研究每个底层库。Keras代码和文档可以在<a target="_blank" rel="noopener" href="https://keras.io/%E4%B8%8A%E6%89%BE%E5%88%B0%E3%80%82Keras%E9%A1%B9%E7%9B%AE%E9%9D%9E%E5%B8%B8%E6%88%90%E5%8A%9F%EF%BC%8C%E7%8E%B0%E5%9C%A8%E5%B7%B2%E7%BB%8F%E5%AE%8C%E5%85%A8%E9%9B%86%E6%88%90%E5%88%B0TensorFlow%E4%B8%AD%E4%BA%86%E3%80%82Keras%E6%98%AF%E6%9C%80%E5%8F%97%E5%88%9D%E5%AD%A6%E8%80%85%E5%92%8C%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%A0%94%E7%A9%B6%E4%BA%BA%E5%91%98%E6%AC%A2%E8%BF%8E%E7%9A%84%E5%B7%A5%E5%85%B7%E4%B9%8B%E4%B8%80%E3%80%82%E5%9C%A8github%E4%B8%8A%E6%9C%89%E8%AE%B8%E5%A4%9A%E7%94%A8Keras%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%BC%80%E6%BA%90%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E3%80%82">https://keras.io/上找到。Keras项目非常成功，现在已经完全集成到TensorFlow中了。Keras是最受初学者和深度学习研究人员欢迎的工具之一。在github上有许多用Keras实现的开源深度学习项目。</a></li>
+<li><strong>Torch/PyTorch</strong>。PyTorch是一个基于Torch的Python开放源码ML库。Torch本身是一个基于Lua编程语言的机器学习和科学计算的开源工具。虽然Torch已不再积极开发，但PyTorch在学术研究人员中非常受欢迎。还有许多基于PyTorch设计的开源项目和人工智能应用程序。Pytorch可在<a target="_blank" rel="noopener" href="https://pytorch.org/%E4%B8%8A%E6%89%BE%E5%88%B0%E3%80%82">https://pytorch.org/上找到。</a></li>
+<li><strong>MXNet</strong>。MXNet来自Apache软件基金会。MXNet是一个灵活、高效的深度学习库。它将所有代码打包在一个源文件中。<strong>它的优势在于跨平台(iOS和android)，易于移植，并且适用于大多数主要编程语言。仅支持CPU部署。</strong>MXNet的网址是<a target="_blank" rel="noopener" href="https://mxnet.incubator.apache.org./">https://mxnet.incubator.apache.org。</a></li>
+<li> <strong>CNNDroid</strong>。CNNDroid是一个开源库，<strong>用于加速CNN在Android设备上的执行</strong>。GPU加速cnn for  Android支持Caffe、Torch和Theano模型，在AlexNet上使用GPU模型比CPU加速30~40倍。CNNDroid可以在<a target="_blank" rel="noopener" href="https://github.com/ENCP/CNNdroid%E4%B8%8A%E6%89%BE%E5%88%B0%E3%80%82">https://github.com/ENCP/CNNdroid上找到。</a></li>
+<li><strong>JaveScript Libraries</strong> 。javascript是基于web应用程序的核心编程语言之一。有相当多的JavaScript库是专门为在web浏览器中进行深度学习开发而设计的，包括ConvNetJS、DeepLern.js、Keras.js、TensorFlow.js、Brain.js等。<strong>不需要安装很多库或驱动程序。这些库对于构建移动深度学习演示非常方便。这也使得移动机器学习更具互动性。</strong>其中一些只用于DNN推断，而其他的也具有训练DNN的能力。有些可以使用CPU进行训练和推断，如ConvNetJs。其他的可以使用GPU进行训练和推理，如DeepLearn.js。js在支持GPU的浏览器中运行Keras模型。<br>对于在现有平台和库中拥有足够经验的开发者来说，开发一个移动深度学习原型可能需要几周或几个月的时间。下一步是在字段中测试应用程序。实际的测试可能会发现计算、存储、内存占用或SWAP方面需要进一步改进。特别是，当系统收集更多特定领域的数据时，您可能能够提高深度学习系统的性能。ML设计者需要对深度学习算法和软件有更深入的了解，才能将其性能提升到更高的水平。</li>
+</ul>
+<p>​       每一组深度机器学习库和工具都有自己的优点、缺点和用例。使用这些工具训练的模型都有自己的格式。为了充分利用所有这些工具和库，能够将模型格式从一种转换为另一种可能是有益的。因此，为此目的开发了一些项目。最强大的模型转换工具之一是MMdnn。该工具可以将TensorFlow、CNTK、Keras、Caffe、PyTorch、MXNet和CoreML格式模型转换为中间表示，然后可以将中间表示转换为这些原生目标格式[28]之一。</p>
+<h3 id="3-移动深度学习优化"><a href="#3-移动深度学习优化" class="headerlink" title="3.移动深度学习优化"></a>3.移动深度学习优化</h3><p>在软件、算法、软硬件联合设计等方面，优化移动深度学习应用的SWAP性能。</p>
+<h4 id="3-1-DeepX软件加速器"><a href="#3-1-DeepX软件加速器" class="headerlink" title="3.1 DeepX软件加速器"></a>3.1 DeepX软件加速器</h4><p>​    DeepX就是一个软件加速器，专为移动设备[43]上的低功耗深度学习推理而设计。该算法由两种用于深度学习推理的资源控制算法组成。<strong>一种算法将DNN体系结构分解成各种类型的块</strong>，这些块在异构的本地GPU和CPU处理器上更有效地执行。<strong>另一种算法通过资源缩放来调整DNN模型结构</strong>，从而调整每个块的开销。</p>
+<h4 id="3-2-SWAP的算法优化"><a href="#3-2-SWAP的算法优化" class="headerlink" title="3.2 SWAP的算法优化"></a>3.2 SWAP的算法优化</h4><p>​    深入研究机器学习神经网络的最初动机是为了获得更好的表征学习。这些学习的表示捕获了特征空间中复杂的非线性嵌入，使模型具有更好的准确性和泛化性能。这些模型通常是深度的，包含数百万个参数，通常不适合移动深度学习部署。最近，人们做了一些非常有趣的工作，使这些高精度模型更适合于移动应用程序，几乎或不牺牲准确性。下面一些方法总结了其中的一些思想，包括dnn的量化、剪枝、压缩和近似。</p>
+<h5 id="3-2-1-CNN架构优化"><a href="#3-2-1-CNN架构优化" class="headerlink" title="3.2.1 CNN架构优化"></a>3.2.1 CNN架构优化</h5><p>​    最近的ResNet使数百层以上的DNN训练取得了令人印象深刻的准确性。然而，精度性能并不与层数成线性关系。对于移动应用程序，在选择架构以平衡准确性和其他SWAP考虑方面可以做出很好的权衡。Iandola的SqueezeNet工作提出了三种策略来优化CNN，使其参数更少[4]:</p>
+<ul>
+<li>将大部分3x3滤波器替换为1x1滤波器。</li>
+<li>减少滤波器的输入通道数量</li>
+<li>在网络的后期层中向下采样</li>
+</ul>
+<p>​    在ImageNet任务上，只需50倍的参数，SqueezeNet就能达到AlexNet级别的精度。通过附加的模型压缩技术(详见下文小节)，SqueezeNet实现了0.5MB大小，比AlexNet小500倍以上。</p>
+<h5 id="3-3-2修剪，量化和霍夫曼编码"><a href="#3-3-2修剪，量化和霍夫曼编码" class="headerlink" title="3.3.2修剪，量化和霍夫曼编码"></a>3.3.2修剪，量化和霍夫曼编码</h5><p>​    Han的“深度压缩”工作采用了剪枝、量化和Huffman编码技术，在不影响精度[44]的情况下，将模型大小减少了35~49倍。<strong>修剪基本上删除了所有小权重连接。</strong>通常，使用剪枝可以将权重参数减少10倍。<strong>接下来的步骤是量化和重量共享。其思想是将所有具有相似值的权值聚在一起，并将这些权值存储在一个码本中。</strong>最后一步应用众所周知的<strong>Huffman编码将更短的代码分配给更常见的符号。</strong><br>​    对于移动应用程序来说，将精度从32位降低到16位或更低也是一种常见的做法。本文对不动点近似、动态不动点近似、小浮点近似和无乘子算法等不同的近似方法进行了比较。一个名为Ristretto的近似框架是用开源代码提出的。TensorFlow还支持8位量化。</p>
+<h5 id="3-2-3网络二值化和xnor网络"><a href="#3-2-3网络二值化和xnor网络" class="headerlink" title="3.2.3网络二值化和xnor网络"></a>3.2.3网络二值化和xnor网络</h5><p>量化的一种极端情况是二值化，即权重减少到-1或+1。卷积计算基本上就是求和和减法。<strong>在XNOR网络中，滤波器和卷积层的输入都是二进制[46]。</strong>与传统的32位分辨率计算相比，这种方法节省了32倍的内存，提高了58倍的卷积运算速度。在Image-Net分类上进行评价时，二元权重网络版本的AlexNet获得了与全精度Alex-Net相同的精度。作者还提供了代码。</p>
+<h4 id="3-3软硬件协同设计"><a href="#3-3软硬件协同设计" class="headerlink" title="3.3软硬件协同设计"></a>3.3软硬件协同设计</h4><p>上一小节展示了移动深度学习SWAP改进的算法进步的巨大前景。采用算法和硬件协同设计的方法制作用于移动深度学习的ASIC芯片，还可以实现更大的改进。例如，Han、Liu等人最近的ASIC协同设计工作，在能效方面分别比CPU和GPU提高了4个和3个数量级。在九个DNN基准测试[47]上，它的速度比CPU和GPU分别提高了两个和一个数量级。</p>
+<h4 id="3-4使用特定领域数据改进移动深度学习系统性能"><a href="#3-4使用特定领域数据改进移动深度学习系统性能" class="headerlink" title="3.4使用特定领域数据改进移动深度学习系统性能"></a>3.4使用特定领域数据改进移动深度学习系统性能</h4><p>对于深度机器学习来说，<strong>数据可能和算法一样重要</strong>。花在收集正确数据上的努力比花在改进算法上的努力更有回报，这种情况并不少见。下面的小节给出了如何处理特定领域数据的一些指导。</p>
+<p>虽然有大量公开可用的数据集，但移动深度学习应用可能在不同的环境下运行，使用不同的传感器，或有不同的规格。从移动深度学习应用程序将要部署的环境中收集一些真实的数据总是一个好主意。这些数据对于改进模型或验证应用程序性能是非常宝贵的。然而，使用新数据从头构建模型并不总是最好的方法。对于移动深度学习来说，对环境的控制较少，因此测试数据的可变性较大。这意味着要有一个性能良好的模型，可能需要一个庞大的训练数据集。不幸的是，数据收集和数据标记可能非常耗时。考虑到所有这些因素，采取的典型步骤是:</p>
+<p>1.搜索与应用程序相似的预先训练过的模型。对于计算机视觉、语音识别和自然语言处理等典型的人工智能应用，已经有许多高质量的模型可供公开使用。现有AI应用模型的详细列表请参见4.4节。<br>2.对特定领域数据的预训练模型进行微调。<br>3.利用现有框架来部署应用程序。</p>
+<p>利用现有的模型和框架可以节省大量的工作。然而，决定预训练模型的哪个部分需要调整是一件非常困难的事情。<strong>这取决于所获取的领域特定数据的数量，以及该数据与用于构建预训练模型的原始数据之间的相似性。</strong>下表给出了一般的指导方针。</p>
+<p>​                                                                            如何<strong>利用现有的域外模型提高域数据性能</strong>的一般指导</p>
+<table>
+<thead>
+<tr>
+<th>领域数据大小</th>
+<th>与预先训练的模型数据相似</th>
+<th>如何提升</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>大</td>
+<td>高</td>
+<td>微调N/最后一层</td>
+</tr>
+<tr>
+<td>小</td>
+<td>高</td>
+<td>微调可能会过度拟合模型，在(N-1)层激活上训练线性分类器</td>
+</tr>
+<tr>
+<td>小</td>
+<td>低</td>
+<td>在低层激活时训练线性分类器，高层更具体于原始数据</td>
+</tr>
+<tr>
+<td>大</td>
+<td>低</td>
+<td>使用特定领域的数据从头开始训练DNN</td>
+</tr>
+</tbody></table>
+<h3 id="4-面向从业者的移动深度学习资源"><a href="#4-面向从业者的移动深度学习资源" class="headerlink" title="4.面向从业者的移动深度学习资源"></a>4.面向从业者的移动深度学习资源</h3><h4 id="4-1用于移动深度学习的计算机语言"><a href="#4-1用于移动深度学习的计算机语言" class="headerlink" title="4.1用于移动深度学习的计算机语言"></a>4.1用于移动深度学习的计算机语言</h4><p>实现移动深度学习的不同方法需要不同的平台、工具和编程语言。这些语言提供了不同的开发效率和实际计算效率。因此，在不同的发展阶段可以采取不同的方法。此外，要在不同的硬件平台上部署已开发的系统，还需要额外的计算机语言技能。例如，Android和iOS平台使用不同的计算机语言。</p>
+<h4 id="4-2移动设备上的深度学习的开放源代码库"><a href="#4-2移动设备上的深度学习的开放源代码库" class="headerlink" title="4.2移动设备上的深度学习的开放源代码库"></a>4.2移动设备上的深度学习的开放源代码库</h4><p>移动深度学习领域的准入门槛相对较低，因为大多数研究人员都在网上免费提供他们的源代码。最受欢迎的托管源代码的网站是github。在其他情况下，机器学习社区会提供基于不同平台或库的相同算法的多个版本。在这种情况下，比较评分以及算法的文档和维护情况通常是一个好主意。</p>
+<h4 id="4-3深度学习模型动物园"><a href="#4-3深度学习模型动物园" class="headerlink" title="4.3深度学习模型动物园"></a>4.3深度学习模型动物园</h4><p>如前一节所述，有许多公开的深度学习模型。这些模型为开发移动深度学习应用程序提供了一个良好的起点。下面列出了一些模型动物园。</p>
+<ul>
+<li><strong>TensorFlow /  Keras模型动物园</strong>。这可以说是最大的动物园模型。它包含两个类别，一个用于TensorFlow官方模型，另一个用于TensorFlow研究模型。官方模型使用TensorFlow的高级API，并且倾向于更好地维护和测试，以跟上TensorFlow的最新更新。官方的模型非常宽泛。例如，官方模型的Keras版本包含以下DNN架构:Xception、Vgg、ResNet、InceptionResNet、MobileNet、DenseNet和NASNet。研究模型是使用TensorFlow实现的一些最新的dnn。例如:注意力模型、生成对手模型、深度演讲和变换器。它们是由个别研究人员维护的。模型链接是<a target="_blank" rel="noopener" href="https://github.com/TensorFlow/models">https://github.com/TensorFlow/models</a></li>
+<li><strong>微软的认知工具</strong>。该工具包提供了60多个模型，涵盖了语音、图像、文本、金融、时间序列和强化学习等应用领域。链接是<a target="_blank" rel="noopener" href="https://www.microsoft.com/enus/cognitive-toolkit/features/model-gallery/">https://www.microsoft.com/enus/cognitive-toolkit/features/model-gallery/</a></li>
+<li><strong>Caffe/Caffe2模型动物园</strong>。Caffe预训练模型涵盖了图像处理和计算机视觉领域最具影响力的几十个模型，如CNN、VGG、ResNet等。链接是<a target="_blank" rel="noopener" href="https://github.com/BVLC/caffe/wiki/Model-Zoo%E5%92%8Chttps://github.com/caffe2/models/">https://github.com/BVLC/caffe/wiki/Model-Zoo和https://github.com/caffe2/models/</a></li>
+<li><strong>动物园MXNet模型</strong>。除了一些最流行的模型也涵盖其他动物园，这个动物园包含网络中的网络模型，单镜头检测模型，LocationNet，电影评级模型，和视频游戏模拟器。链接是<a target="_blank" rel="noopener" href="https://mxnet.incubator.apache.org/model_zoo/index.html">https://mxnet.incubator.apache.org/model_zoo/index.html</a></li>
+</ul>
+<h4 id="4-4移动深度学习平台性能基准-IOS、Android"><a href="#4-4移动深度学习平台性能基准-IOS、Android" class="headerlink" title="4.4移动深度学习平台性能基准(IOS、Android)"></a>4.4移动深度学习平台性能基准(IOS、Android)</h4><p>现代智能手机能够提供超过100亿次的浮点运算能力。移动深度学习的基准应该考虑准确性、模型大小和速度/执行时间等指标。<strong>一个基准是比较iPhone 7上用于图像分类的各种深度学习模型</strong>。下总结了性能。</p>
+<p>​                                                                                                基准图像分类模型性能iPhone 7</p>
+<table>
+<thead>
+<tr>
+<th>模型架构</th>
+<th>Top1 Acc (%)</th>
+<th>模型大小(MB)</th>
+<th>执行时间(ms)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>vgg16</td>
+<td>71</td>
+<td>553</td>
+<td>208</td>
+</tr>
+<tr>
+<td>inception v3</td>
+<td>78</td>
+<td>95</td>
+<td>90</td>
+</tr>
+<tr>
+<td>ResNet 50</td>
+<td>75</td>
+<td>103</td>
+<td>64</td>
+</tr>
+<tr>
+<td>mobilenet</td>
+<td>71</td>
+<td>17</td>
+<td>32</td>
+</tr>
+<tr>
+<td>sqeezenet</td>
+<td>57</td>
+<td>5</td>
+<td>24</td>
+</tr>
+</tbody></table>
+<p><strong>第二个是Android智能手机上的4个芯片组</strong>(高通、HiSillicon、MediaTck和三星)的人工智能基准测试。本文将深度学习中的8个任务作为人工智能基准进行了比较，包括图像分类、人脸识别、去模糊、超分辨率、分割和增强。这个基准测试从超过10,000个移动设备和超过50个不同的移动soc中获得了结果。详情请见<a target="_blank" rel="noopener" href="http://aibenchmark.com/%E3%80%82%E5%85%B6%E4%B8%AD%E4%B8%80%E4%BA%9B%E7%BB%93%E8%AE%BA%E5%A6%82%E4%B8%8B">http://aibenchmark.com/。其中一些结论如下</a>:</p>
+<ul>
+<li>在Android上使用深度学习最简单的方法是使用TensorFlow Mobile框架。</li>
+<li>TensorFlow Lite是一个选项，但我们推荐用于比图像分类更复杂的任务。</li>
+<li>对于特定的设备或SoC，可以使用专有SDK，但不那么容易和方便。</li>
+<li>Caffe 2和其他框架没有那么流行，几乎没有教程和问题描述。</li>
+<li>模型量化的适用性有限，性能可能不可靠。</li>
+</ul>
+<h3 id="5-移动深度学习应用"><a href="#5-移动深度学习应用" class="headerlink" title="5.移动深度学习应用"></a>5.移动深度学习应用</h3><h4 id="5-1机器人"><a href="#5-1机器人" class="headerlink" title="5.1机器人"></a>5.1机器人</h4><p>随着人工智能技术的发展，机器人在不久的将来将扮演许多科学家和工程师所设想的角色。除了前面提到的语音、自然语言处理和计算机视觉任务外，机器人还面临一些学习、推理和实施的特定应用任务。一些最新的技术综述和关于其潜力和局限性的讨论是可以得到的。要想取得进展，一个关键技术是让机器人能够自主地从感官数据中获得技能。机器人需要能够在没有特定指令的情况下完成一般任务。这也被称为学会学习。</p>
+<h4 id="5-2自动驾驶"><a href="#5-2自动驾驶" class="headerlink" title="5.2自动驾驶"></a>5.2自动驾驶</h4><p>自动驾驶是移动深度学习的另一个非常重要的应用，有望在不久的将来成为现实。关于深度学习在自动驾驶中的应用，最近发表了许多有趣的论文。CNN对高速公路行驶的经验评价显示了其对地面和车辆的实时检测能力。提出了一个基于统一架构的多网络，用于联合分类、检测和语义分割的实时求解。自动驾驶的障碍除了道德和法律等非技术问题外，似乎还包括在极端条件下驾驶。</p>
+<h4 id="5-3医疗"><a href="#5-3医疗" class="headerlink" title="5.3医疗"></a>5.3医疗</h4><p>虽然医疗资源可能有限，但智能手机设备在全球日益普及。将深度学习应用于改善医疗保健服务，可能会对福祉和经济产生深远影响。拥有如此多的内置传感器，智能手机可以被用作“医疗”设备，监测个人的身体和心理状态。例如，在对话中使用音频和文本可以检测抑郁。此外，摄像机和扬声器可以作为眼睛和声音，为视力和语言障碍的人。</p>
+<h4 id="5-4生物识别技术"><a href="#5-4生物识别技术" class="headerlink" title="5.4生物识别技术"></a>5.4生物识别技术</h4><p>与模式识别的许多其他领域的问题类似，深度学习是许多生物识别模式的领先解决方案，包括人脸、声音、按键、指纹、手指静脉、虹膜和手势识别。由于智能手机包含如此多的用户隐私数据，安全性非常重要。大多数智能手机都有内置的指纹或面部识别生物识别技术。我们可以预见，对于未来的可共享自动驾驶汽车，出于安全考虑，移动生物识别组件也应该是必须的。在一定程度上，生物特征识别是合作对象近距离协作的一个亟待解决的问题。未解决的关键问题之一是远距离不合作的主体。</p>
+<h4 id="5-5个人辅助、移动多媒体、增强现实和娱乐"><a href="#5-5个人辅助、移动多媒体、增强现实和娱乐" class="headerlink" title="5.5个人辅助、移动多媒体、增强现实和娱乐"></a>5.5个人辅助、移动多媒体、增强现实和娱乐</h4><p>个人辅助、移动多媒体和人的互动可以说是移动深度学习技术应用最广泛的领域。最近的一份报告显示，超过4700万美国成年人已经拥有智能音箱，更不用说智能手机上的个人辅助功能了。人工智能在未来能够生成文本、图像，甚至视频。娱乐内容交付、用户粘性和增强现实都可以通过AI技术得到改善。</p>
+<h4 id="5-6防御"><a href="#5-6防御" class="headerlink" title="5.6防御"></a>5.6防御</h4><p>随着人工智能技术的发展，它为国防工业打开了应用的大门。半自主无人机可能会使用一些类似于自动驾驶的技术来开发。许多计算机视觉技术可用于自动目标检测、识别和跟踪。深度学习适用于电子战感知的全光谱。大多数为民用机器人开发的技术可能适用于国防领域，用于军用物资的运输和其他任务。不管技术准备水平如何，科学家、工程师、媒体和政治家在推广人工智能用于自动武器时都应该非常小心。许多道德、法律、监管和政策问题尚未解决。</p>
+<h3 id="6-移动深度学习的挑战和未来的工作"><a href="#6-移动深度学习的挑战和未来的工作" class="headerlink" title="6.移动深度学习的挑战和未来的工作"></a>6.移动深度学习的挑战和未来的工作</h3><h4 id="6-1用于移动设备的自动深度机器学习"><a href="#6-1用于移动设备的自动深度机器学习" class="headerlink" title="6.1用于移动设备的自动深度机器学习"></a>6.1用于移动设备的自动深度机器学习</h4><p>如前所述，移动设备应用程序的深度学习必须针对SWAP进行优化。深度学习系统中有许多可以优化的层次参数。这些被称为超参数。超参数优化是一个被称为自动机器学习的活跃课题。一些自动ML技术可以应用到移动应用中。移动DL的目标函数不仅仅是精度，还可以是精度、内存占用、计算速度和功耗的加权函数。</p>
+<h4 id="6-2低质量数据和ML用于信号处理"><a href="#6-2低质量数据和ML用于信号处理" class="headerlink" title="6.2低质量数据和ML用于信号处理"></a>6.2低质量数据和ML用于信号处理</h4><p>移动应用程序通常意味着应用程序的约束更少。与在实验室中收集的控制良好的数据不同，移动数据往往带有更多混杂因素，更加嘈杂。这也意味着一些(如果不是很大一部分的话)标记的数据可能是错误的。虽然DNN在训练数据较大时对噪声标签具有鲁棒性，但如果训练数据较少，则会出现问题。因此，移动深度学习工程师需要更仔细地准备用于模型训练的数据。有时可能需要自定义信号处理来处理某些特殊现象。</p>
+<h4 id="6-3训练数据少，样本学习少，迁移学习"><a href="#6-3训练数据少，样本学习少，迁移学习" class="headerlink" title="6.3训练数据少，样本学习少，迁移学习"></a>6.3训练数据少，样本学习少，迁移学习</h4><p>虽然未标记的数据可能更丰富，但移动应用程序通常一开始就拥有较少的训练数据。为了启动系统，可以使用少量样本学习或迁移学习。随着可用数据的增加，初始模型可以迭代地改进。</p>
+<h4 id="6-4环境的改变、在线适应和终身学习"><a href="#6-4环境的改变、在线适应和终身学习" class="headerlink" title="6.4环境的改变、在线适应和终身学习"></a>6.4环境的改变、在线适应和终身学习</h4><p>移动深度学习的另一个更具挑战性的问题是，环境可能会随着时间而改变。在一些极端情况下，系统可能不得不面对一些不可预见的情况。这些情况要求移动系统能够在线适应数据的变化或能够终身学习。</p>
+<h4 id="6-5移动深度学习中的隐私问题"><a href="#6-5移动深度学习中的隐私问题" class="headerlink" title="6.5移动深度学习中的隐私问题"></a>6.5移动深度学习中的隐私问题</h4><p>由于一些移动深度学习直接处理用户的个人数据，隐私是一个问题。如果数据是在云中存储和处理的，这一点尤其正确。最近提出了一种混合深度学习架构，用于保护隐私的移动分析。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p><a href="https://wonpeach.github.io/2021/11/01/notes-for-review1-副本/">https://wonpeach.github.io/2021/11/01/notes-for-review1-副本/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Wonpeach</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-11-01</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-11-01</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/wxgb.jpg" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wxgb.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/11/01/notes-for-review2-%E5%89%AF%E6%9C%AC/"><i class="level-item fas fa-chevron-left"></i><span class="level-item"> </span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/11/01/paperNote/"><span class="level-item"> </span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://wonpeach.github.io/2021/11/01/notes-for-review1-%E5%89%AF%E6%9C%AC/';
+            this.page.identifier = '2021/11/01/notes-for-review1-副本/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + '不能为空' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/wxtx.jpg" alt="小涛大仙"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">小涛大仙</p><p class="is-size-6 is-block">武汉在读学生</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>湖北·武汉</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Wonpeach" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Wonpeach"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://baidu.com" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Baidu</span></span><span class="level-right"><span class="level-item tag">baidu.com</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-01T12:19:21.815Z">2021-11-01</time></p><p class="title"><a href="/2021/11/01/paperNote-%E5%89%AF%E6%9C%AC-2/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-01T12:19:21.810Z">2021-11-01</time></p><p class="title"><a href="/2021/11/01/paperNote-%E5%89%AF%E6%9C%AC-%E5%89%AF%E6%9C%AC/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-01T12:19:21.806Z">2021-11-01</time></p><p class="title"><a href="/2021/11/01/notes-for-review2-%E5%89%AF%E6%9C%AC-2/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-01T12:19:21.799Z">2021-11-01</time></p><p class="title"><a href="/2021/11/01/notes-for-review2-%E5%89%AF%E6%9C%AC-%E5%89%AF%E6%9C%AC/">Deep Learning on Mobile and Embedded Devices:State-of-the-art, Challenges, and Future Directions(移动和嵌入式设备上的深度学习:最新技术、挑战和未来方向)</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-01T12:19:21.792Z">2021-11-01</time></p><p class="title"><a href="/2021/11/01/notes-for-review1-%E5%89%AF%E6%9C%AC-2/"> </a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li></ul></div></div></div><!--!--></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/mylogo.svg" alt="Wonpeach的博客" height="28"></a><p class="is-size-7"><span>&copy; 2021 Wonpeach</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
