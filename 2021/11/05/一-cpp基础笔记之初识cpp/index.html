@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>(一)cpp基础笔记之初识cpp - Wonpeach的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Wonpeach的博客"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Wonpeach的博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="写在前面  本笔记是来自黑马程序员的C++入门基础，本篇笔记视频讲解地址：https:&amp;#x2F;&amp;#x2F;www.bilibili.com&amp;#x2F;video&amp;#x2F;BV1et411b73Z?p&amp;#x3D;1 本笔记主要用来复习回顾使用。"><meta property="og:type" content="blog"><meta property="og:title" content="(一)cpp基础笔记之初识cpp"><meta property="og:url" content="https://wonpeach.github.io/2021/11/05/%E4%B8%80-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%9D%E8%AF%86cpp/"><meta property="og:site_name" content="Wonpeach的博客"><meta property="og:description" content="写在前面  本笔记是来自黑马程序员的C++入门基础，本篇笔记视频讲解地址：https:&amp;#x2F;&amp;#x2F;www.bilibili.com&amp;#x2F;video&amp;#x2F;BV1et411b73Z?p&amp;#x3D;1 本笔记主要用来复习回顾使用。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541383178746.png"><meta property="og:image" content="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541383377380.png"><meta property="og:image" content="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541383814237.png"><meta property="og:image" content="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541384140042.png"><meta property="og:image" content="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541384818688.png"><meta property="article:published_time" content="2021-11-05T15:59:54.000Z"><meta property="article:modified_time" content="2021-11-05T16:02:20.263Z"><meta property="article:author" content="Wonpeach"><meta property="article:tag" content="note"><meta property="article:tag" content="c++"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541383178746.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://wonpeach.github.io/2021/11/05/%E4%B8%80-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%9D%E8%AF%86cpp/"},"headline":"(一)cpp基础笔记之初识cpp","image":["https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541383178746.png","https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541383377380.png","https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541383814237.png","https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541384140042.png","https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541384818688.png"],"datePublished":"2021-11-05T15:59:54.000Z","dateModified":"2021-11-05T16:02:20.263Z","author":{"@type":"Person","name":"Wonpeach"},"publisher":{"@type":"Organization","name":"Wonpeach的博客","logo":{"@type":"ImageObject","url":"https://wonpeach.github.io/img/mylogo.svg"}},"description":"写在前面  本笔记是来自黑马程序员的C++入门基础，本篇笔记视频讲解地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1et411b73Z?p&#x3D;1 本笔记主要用来复习回顾使用。"}</script><link rel="canonical" href="https://wonpeach.github.io/2021/11/05/%E4%B8%80-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%9D%E8%AF%86cpp/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/mylogo.svg" alt="Wonpeach的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/Wonpeach"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-11-05T15:59:54.000Z" title="2021/11/5 下午11:59:54">2021-11-05</time>发表</span><span class="level-item"><time dateTime="2021-11-05T16:02:20.263Z" title="2021/11/6 上午12:02:20">2021-11-06</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="level-item">6 分钟读完 (大约923个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">(一)cpp基础笔记之初识cpp</h1><div class="content"><p><strong>写在前面</strong></p>
+<ol>
+<li>本笔记是来自黑马程序员的C++入门基础，本篇笔记视频讲解地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1et411b73Z?p=1">https://www.bilibili.com/video/BV1et411b73Z?p=1</a></li>
+<li>本笔记主要用来复习回顾使用。</li>
+</ol>
+<span id="more"></span>
+
+<h2 id="C-初识"><a href="#C-初识" class="headerlink" title="C++初识"></a>C++初识</h2><h3 id="第一个C-程序"><a href="#第一个C-程序" class="headerlink" title="第一个C++程序"></a>第一个C++程序</h3><p>编写一个C++程序总共分为4个步骤</p>
+<ul>
+<li>创建项目</li>
+<li>创建文件</li>
+<li>编写代码</li>
+<li>运行程序</li>
+</ul>
+<h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><p>​    Visual Studio是我们用来编写C++程序的主要工具，我们先将它打开</p>
+<p><img src="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541383178746.png" alt="创建新项目"></p>
+<p><img src="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541383377380.png" alt="项目配置"></p>
+<h4 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h4><p>右键源文件，选择添加-&gt;新建项</p>
+<p><img src="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541383814237.png" alt="创建新文件"></p>
+<p>给C++文件起个名称，然后点击添加即可。</p>
+<p><img src="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541384140042.png" alt="1541384140042"></p>
+<h4 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello world&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4><p><img src="https://gitee.com/Wonpeach/picture/raw/master/picture_bed/1541384818688.png" alt="1541384818688"></p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p><strong>作用</strong>：在代码中加一些说明和解释，方便自己或其他程序员程序员阅读代码</p>
+<p><strong>两种格式</strong></p>
+<ol>
+<li><strong>单行注释</strong>：<code>// 描述信息</code> <ul>
+<li>通常放在一行代码的上方，或者一条语句的末尾，对该行代码说明</li>
+</ul>
+</li>
+<li><strong>多行注释</strong>： <code>/* 描述信息 */</code><ul>
+<li>通常放在一段代码的上方，对该段代码做整体说明</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>提示：编译器在编译代码时，会忽略注释的内容</p>
+</blockquote>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p><strong>作用</strong>：给一段指定的内存空间起名，方便操作这段内存</p>
+<p><strong>语法</strong>：<code>数据类型 变量名 = 初始值;</code></p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//变量的定义</span></span><br><span class="line">    <span class="comment">//语法：数据类型  变量名 = 初始值</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;a = &quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：C++在创建变量时，必须给变量一个初始值，否则会报错</p>
+</blockquote>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p><strong>作用</strong>：用于记录程序中不可更改的数据</p>
+<p>C++定义常量两种方式</p>
+<ol>
+<li><p><strong>#define</strong> 宏常量： <code>#define 常量名 常量值</code></p>
+<ul>
+<li>通常在文件上方定义，表示一个常量</li>
+</ul>
+</li>
+<li><p><strong>const</strong>修饰的变量 <code>const 数据类型 常量名 = 常量值</code></p>
+<ul>
+<li>通常在变量定义前加关键字const，修饰该变量为常量，不可修改</li>
+</ul>
+</li>
+</ol>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、宏常量</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> day 7</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;一周里总共有 &quot;</span> &lt;&lt; day &lt;&lt; <span class="string">&quot; 天&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="comment">//day = 8;  //报错，宏常量不可以修改</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//2、const修饰变量</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> month = <span class="number">12</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;一年里总共有 &quot;</span> &lt;&lt; month &lt;&lt; <span class="string">&quot; 个月份&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="comment">//month = 24; //报错，常量是不可以修改的</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p><strong>作用：</strong>关键字是C++中预先保留的单词（标识符）</p>
+<ul>
+<li><strong>在定义变量或者常量时候，不要用关键字</strong></li>
+</ul>
+<p>C++关键字如下：</p>
+<table>
+<thead>
+<tr>
+<th>asm</th>
+<th>do</th>
+<th>if</th>
+<th>return</th>
+<th>typedef</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auto</td>
+<td>double</td>
+<td>inline</td>
+<td>short</td>
+<td>typeid</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>dynamic_cast</td>
+<td>int</td>
+<td>signed</td>
+<td>typename</td>
+</tr>
+<tr>
+<td>break</td>
+<td>else</td>
+<td>long</td>
+<td>sizeof</td>
+<td>union</td>
+</tr>
+<tr>
+<td>case</td>
+<td>enum</td>
+<td>mutable</td>
+<td>static</td>
+<td>unsigned</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>explicit</td>
+<td>namespace</td>
+<td>static_cast</td>
+<td>using</td>
+</tr>
+<tr>
+<td>char</td>
+<td>export</td>
+<td>new</td>
+<td>struct</td>
+<td>virtual</td>
+</tr>
+<tr>
+<td>class</td>
+<td>extern</td>
+<td>operator</td>
+<td>switch</td>
+<td>void</td>
+</tr>
+<tr>
+<td>const</td>
+<td>false</td>
+<td>private</td>
+<td>template</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>const_cast</td>
+<td>float</td>
+<td>protected</td>
+<td>this</td>
+<td>wchar_t</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>for</td>
+<td>public</td>
+<td>throw</td>
+<td>while</td>
+</tr>
+<tr>
+<td>default</td>
+<td>friend</td>
+<td>register</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>delete</td>
+<td>goto</td>
+<td>reinterpret_cast</td>
+<td>try</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示：在给变量或者常量起名称时候，不要用C++得关键字，否则会产生歧义。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="标识符命名规则"><a href="#标识符命名规则" class="headerlink" title="标识符命名规则"></a>标识符命名规则</h3><p><strong>作用</strong>：C++规定给标识符（变量、常量）命名时，有一套自己的规则</p>
+<ul>
+<li>标识符不能是关键字</li>
+<li>标识符只能由字母、数字、下划线组成</li>
+<li>第一个字符必须为字母或下划线</li>
+<li>标识符中字母区分大小写</li>
+</ul>
+<blockquote>
+<p>建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读</p>
+</blockquote>
+</div><div class="article-licensing box"><div class="licensing-title"><p>(一)cpp基础笔记之初识cpp</p><p><a href="https://wonpeach.github.io/2021/11/05/一-cpp基础笔记之初识cpp/">https://wonpeach.github.io/2021/11/05/一-cpp基础笔记之初识cpp/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Wonpeach</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-11-05</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-11-06</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/note/">note</a><a class="link-muted mr-2" rel="tag" href="/tags/c/">c++</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/zfbhb.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wxhb.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/11/06/%E4%BA%8C-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">(二)cpp基础笔记之数据类型</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/11/05/Cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"><span class="level-item">Cpp基础笔记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://wonpeach.github.io/2021/11/05/%E4%B8%80-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%9D%E8%AF%86cpp/';
+            this.page.identifier = '2021/11/05/一-cpp基础笔记之初识cpp/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + '不能为空' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/wxtx.jpg" alt="小涛大仙"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">小涛大仙</p><p class="is-size-6 is-block">武汉在读学生</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>湖北·武汉</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">4</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Wonpeach" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Wonpeach"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://baidu.com" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Baidu</span></span><span class="level-right"><span class="level-item tag">baidu.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">学习</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">笔记</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-05T16:10:15.000Z">2021-11-06</time></p><p class="title"><a href="/2021/11/06/%E5%85%AB-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%BB%93%E6%9E%84%E4%BD%93/">(八)cpp基础笔记之结构体</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-05T16:09:21.000Z">2021-11-06</time></p><p class="title"><a href="/2021/11/06/%E4%B8%83-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%8C%87%E9%92%88/">(七)cpp基础笔记之指针</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-05T16:08:08.000Z">2021-11-06</time></p><p class="title"><a href="/2021/11/06/%E5%85%AD-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0/">(六)cpp基础笔记之函数</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-05T16:07:06.000Z">2021-11-06</time></p><p class="title"><a href="/2021/11/06/%E4%BA%94-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E7%BB%84/">(五)cpp基础笔记之数组</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-05T16:05:30.000Z">2021-11-06</time></p><p class="title"><a href="/2021/11/06/%E5%9B%9B-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84/">(四)cpp基础笔记之程序流程结构</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c++</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/note/"><span class="tag">note</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/study/"><span class="tag">study</span><span class="tag">1</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/mylogo.svg" alt="Wonpeach的博客" height="28"></a><p class="is-size-7"><span>&copy; 2021 Wonpeach</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Wonpeach"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

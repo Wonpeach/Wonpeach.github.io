@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>(二)cpp基础笔记之数据类型 - Wonpeach的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Wonpeach的博客"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Wonpeach的博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="写在前面  本笔记是来自黑马程序员的C++入门基础，本篇笔记视频讲解地址：https:&amp;#x2F;&amp;#x2F;www.bilibili.com&amp;#x2F;video&amp;#x2F;BV1et411b73Z?p&amp;#x3D;1 本笔记主要用来复习回顾使用。"><meta property="og:type" content="blog"><meta property="og:title" content="(二)cpp基础笔记之数据类型"><meta property="og:url" content="https://wonpeach.github.io/2021/11/06/%E4%BA%8C-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"><meta property="og:site_name" content="Wonpeach的博客"><meta property="og:description" content="写在前面  本笔记是来自黑马程序员的C++入门基础，本篇笔记视频讲解地址：https:&amp;#x2F;&amp;#x2F;www.bilibili.com&amp;#x2F;video&amp;#x2F;BV1et411b73Z?p&amp;#x3D;1 本笔记主要用来复习回顾使用。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://wonpeach.github.io/img/og_image.png"><meta property="article:published_time" content="2021-11-05T16:02:45.000Z"><meta property="article:modified_time" content="2021-11-05T16:03:34.818Z"><meta property="article:author" content="Wonpeach"><meta property="article:tag" content="note"><meta property="article:tag" content="c++"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://wonpeach.github.io/2021/11/06/%E4%BA%8C-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"},"headline":"(二)cpp基础笔记之数据类型","image":["https://wonpeach.github.io/img/og_image.png"],"datePublished":"2021-11-05T16:02:45.000Z","dateModified":"2021-11-05T16:03:34.818Z","author":{"@type":"Person","name":"Wonpeach"},"publisher":{"@type":"Organization","name":"Wonpeach的博客","logo":{"@type":"ImageObject","url":"https://wonpeach.github.io/img/mylogo.svg"}},"description":"写在前面  本笔记是来自黑马程序员的C++入门基础，本篇笔记视频讲解地址：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1et411b73Z?p&#x3D;1 本笔记主要用来复习回顾使用。"}</script><link rel="canonical" href="https://wonpeach.github.io/2021/11/06/%E4%BA%8C-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/mylogo.svg" alt="Wonpeach的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/Wonpeach"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-11-05T16:02:45.000Z" title="2021/11/6 上午12:02:45">2021-11-06</time>发表</span><span class="level-item"><time dateTime="2021-11-05T16:03:34.818Z" title="2021/11/6 上午12:03:34">2021-11-06</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="level-item">10 分钟读完 (大约1451个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">(二)cpp基础笔记之数据类型</h1><div class="content"><p><strong>写在前面</strong></p>
+<ol>
+<li>本笔记是来自黑马程序员的C++入门基础，本篇笔记视频讲解地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1et411b73Z?p=1">https://www.bilibili.com/video/BV1et411b73Z?p=1</a></li>
+<li>本笔记主要用来复习回顾使用。</li>
+</ol>
+<span id="more"></span>
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>C++规定在创建一个变量或者常量时，必须要指定出相应的数据类型，否则无法给变量分配内存</p>
+<h3 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h3><p><strong>作用</strong>：整型变量表示的是整数类型的数据</p>
+<p>C++中能够表示整型的类型有以下几种方式，<strong>区别在于所占内存空间不同</strong>：</p>
+<table>
+<thead>
+<tr>
+<th><strong>数据类型</strong></th>
+<th><strong>占用空间</strong></th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>short(短整型)</td>
+<td>2字节</td>
+<td>(-2^15 ~ 2^15-1)</td>
+</tr>
+<tr>
+<td>int(整型)</td>
+<td>4字节</td>
+<td>(-2^31 ~ 2^31-1)</td>
+</tr>
+<tr>
+<td>long(长整形)</td>
+<td>Windows为4字节，Linux为4字节(32位)，8字节(64位)</td>
+<td>(-2^31 ~ 2^31-1)</td>
+</tr>
+<tr>
+<td>long long(长长整形)</td>
+<td>8字节</td>
+<td>(-2^63 ~ 2^63-1)</td>
+</tr>
+</tbody></table>
+<h3 id="sizeof关键字"><a href="#sizeof关键字" class="headerlink" title="sizeof关键字"></a>sizeof关键字</h3><p><strong>作用：</strong>利用sizeof关键字可以统计数据类型所占内存大小</p>
+<p><strong>语法：</strong> <code>sizeof( 数据类型 / 变量)</code></p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;short 类型所占内存空间为： &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">short</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;int 类型所占内存空间为： &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;long 类型所占内存空间为： &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">long</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;long long 类型所占内存空间为： &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">long</span> <span class="keyword">long</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>整型结论</strong>：short &lt; int &lt;= long &lt;= long long</p>
+</blockquote>
+<h3 id="实型（浮点型）"><a href="#实型（浮点型）" class="headerlink" title="实型（浮点型）"></a>实型（浮点型）</h3><p><strong>作用</strong>：用于表示小数</p>
+<p>浮点型变量分为两种：</p>
+<ol>
+<li>单精度float </li>
+<li>双精度double</li>
+</ol>
+<p>两者的<strong>区别</strong>在于表示的有效数字范围不同。</p>
+<table>
+<thead>
+<tr>
+<th><strong>数据类型</strong></th>
+<th><strong>占用空间</strong></th>
+<th><strong>有效数字范围</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>4字节</td>
+<td>7位有效数字</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8字节</td>
+<td>15～16位有效数字</td>
+</tr>
+</tbody></table>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">float</span> f1 = <span class="number">3.14f</span>;</span><br><span class="line">    <span class="keyword">double</span> d1 = <span class="number">3.14</span>;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; f1 &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; d1&lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;float  sizeof = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(f1) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;double sizeof = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(d1) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//科学计数法</span></span><br><span class="line">    <span class="keyword">float</span> f2 = <span class="number">3e2</span>; <span class="comment">// 3 * 10 ^ 2 </span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;f2 = &quot;</span> &lt;&lt; f2 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">float</span> f3 = <span class="number">3e-2</span>;  <span class="comment">// 3 * 0.1 ^ 2</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;f3 = &quot;</span> &lt;&lt; f3 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><p><strong>作用：</strong>字符型变量用于显示单个字符</p>
+<p><strong>语法：</strong><code>char ch = &#39;a&#39;;</code></p>
+<blockquote>
+<p>注意1：在显示字符型变量时，用单引号将字符括起来，不要用双引号</p>
+</blockquote>
+<blockquote>
+<p>注意2：单引号内只能有一个字符，不可以是字符串</p>
+</blockquote>
+<ul>
+<li>C和C++中字符型变量只占用1个字节。</li>
+<li>字符型变量并不是把字符本身放到内存中存储，而是将对应的ASCII编码放入到存储单元</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">char</span> ch = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">    cout &lt;&lt; ch &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">char</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//ch = &quot;abcde&quot;; //错误，不可以用双引号</span></span><br><span class="line">    <span class="comment">//ch = &#x27;abcde&#x27;; //错误，单引号内只能引用一个字符</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; (<span class="keyword">int</span>)ch &lt;&lt; endl;  <span class="comment">//查看字符a对应的ASCII码</span></span><br><span class="line">    ch = <span class="number">97</span>; <span class="comment">//可以直接用ASCII给字符型变量赋值</span></span><br><span class="line">    cout &lt;&lt; ch &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>ASCII码表格：</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>ASCII</strong>值</th>
+<th><strong>控制字符</strong></th>
+<th><strong>ASCII</strong>值</th>
+<th><strong>字符</strong></th>
+<th><strong>ASCII</strong>值</th>
+<th><strong>字符</strong></th>
+<th><strong>ASCII</strong>值</th>
+<th><strong>字符</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>NUT</td>
+<td>32</td>
+<td>(space)</td>
+<td>64</td>
+<td>@</td>
+<td>96</td>
+<td>、</td>
+</tr>
+<tr>
+<td>1</td>
+<td>SOH</td>
+<td>33</td>
+<td>!</td>
+<td>65</td>
+<td>A</td>
+<td>97</td>
+<td>a</td>
+</tr>
+<tr>
+<td>2</td>
+<td>STX</td>
+<td>34</td>
+<td>“</td>
+<td>66</td>
+<td>B</td>
+<td>98</td>
+<td>b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ETX</td>
+<td>35</td>
+<td>#</td>
+<td>67</td>
+<td>C</td>
+<td>99</td>
+<td>c</td>
+</tr>
+<tr>
+<td>4</td>
+<td>EOT</td>
+<td>36</td>
+<td>$</td>
+<td>68</td>
+<td>D</td>
+<td>100</td>
+<td>d</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ENQ</td>
+<td>37</td>
+<td>%</td>
+<td>69</td>
+<td>E</td>
+<td>101</td>
+<td>e</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ACK</td>
+<td>38</td>
+<td>&amp;</td>
+<td>70</td>
+<td>F</td>
+<td>102</td>
+<td>f</td>
+</tr>
+<tr>
+<td>7</td>
+<td>BEL</td>
+<td>39</td>
+<td>,</td>
+<td>71</td>
+<td>G</td>
+<td>103</td>
+<td>g</td>
+</tr>
+<tr>
+<td>8</td>
+<td>BS</td>
+<td>40</td>
+<td>(</td>
+<td>72</td>
+<td>H</td>
+<td>104</td>
+<td>h</td>
+</tr>
+<tr>
+<td>9</td>
+<td>HT</td>
+<td>41</td>
+<td>)</td>
+<td>73</td>
+<td>I</td>
+<td>105</td>
+<td>i</td>
+</tr>
+<tr>
+<td>10</td>
+<td>LF</td>
+<td>42</td>
+<td>*</td>
+<td>74</td>
+<td>J</td>
+<td>106</td>
+<td>j</td>
+</tr>
+<tr>
+<td>11</td>
+<td>VT</td>
+<td>43</td>
+<td>+</td>
+<td>75</td>
+<td>K</td>
+<td>107</td>
+<td>k</td>
+</tr>
+<tr>
+<td>12</td>
+<td>FF</td>
+<td>44</td>
+<td>,</td>
+<td>76</td>
+<td>L</td>
+<td>108</td>
+<td>l</td>
+</tr>
+<tr>
+<td>13</td>
+<td>CR</td>
+<td>45</td>
+<td>-</td>
+<td>77</td>
+<td>M</td>
+<td>109</td>
+<td>m</td>
+</tr>
+<tr>
+<td>14</td>
+<td>SO</td>
+<td>46</td>
+<td>.</td>
+<td>78</td>
+<td>N</td>
+<td>110</td>
+<td>n</td>
+</tr>
+<tr>
+<td>15</td>
+<td>SI</td>
+<td>47</td>
+<td>/</td>
+<td>79</td>
+<td>O</td>
+<td>111</td>
+<td>o</td>
+</tr>
+<tr>
+<td>16</td>
+<td>DLE</td>
+<td>48</td>
+<td>0</td>
+<td>80</td>
+<td>P</td>
+<td>112</td>
+<td>p</td>
+</tr>
+<tr>
+<td>17</td>
+<td>DCI</td>
+<td>49</td>
+<td>1</td>
+<td>81</td>
+<td>Q</td>
+<td>113</td>
+<td>q</td>
+</tr>
+<tr>
+<td>18</td>
+<td>DC2</td>
+<td>50</td>
+<td>2</td>
+<td>82</td>
+<td>R</td>
+<td>114</td>
+<td>r</td>
+</tr>
+<tr>
+<td>19</td>
+<td>DC3</td>
+<td>51</td>
+<td>3</td>
+<td>83</td>
+<td>S</td>
+<td>115</td>
+<td>s</td>
+</tr>
+<tr>
+<td>20</td>
+<td>DC4</td>
+<td>52</td>
+<td>4</td>
+<td>84</td>
+<td>T</td>
+<td>116</td>
+<td>t</td>
+</tr>
+<tr>
+<td>21</td>
+<td>NAK</td>
+<td>53</td>
+<td>5</td>
+<td>85</td>
+<td>U</td>
+<td>117</td>
+<td>u</td>
+</tr>
+<tr>
+<td>22</td>
+<td>SYN</td>
+<td>54</td>
+<td>6</td>
+<td>86</td>
+<td>V</td>
+<td>118</td>
+<td>v</td>
+</tr>
+<tr>
+<td>23</td>
+<td>TB</td>
+<td>55</td>
+<td>7</td>
+<td>87</td>
+<td>W</td>
+<td>119</td>
+<td>w</td>
+</tr>
+<tr>
+<td>24</td>
+<td>CAN</td>
+<td>56</td>
+<td>8</td>
+<td>88</td>
+<td>X</td>
+<td>120</td>
+<td>x</td>
+</tr>
+<tr>
+<td>25</td>
+<td>EM</td>
+<td>57</td>
+<td>9</td>
+<td>89</td>
+<td>Y</td>
+<td>121</td>
+<td>y</td>
+</tr>
+<tr>
+<td>26</td>
+<td>SUB</td>
+<td>58</td>
+<td>:</td>
+<td>90</td>
+<td>Z</td>
+<td>122</td>
+<td>z</td>
+</tr>
+<tr>
+<td>27</td>
+<td>ESC</td>
+<td>59</td>
+<td>;</td>
+<td>91</td>
+<td>[</td>
+<td>123</td>
+<td>{</td>
+</tr>
+<tr>
+<td>28</td>
+<td>FS</td>
+<td>60</td>
+<td>&lt;</td>
+<td>92</td>
+<td>/</td>
+<td>124</td>
+<td>|</td>
+</tr>
+<tr>
+<td>29</td>
+<td>GS</td>
+<td>61</td>
+<td>=</td>
+<td>93</td>
+<td>]</td>
+<td>125</td>
+<td>}</td>
+</tr>
+<tr>
+<td>30</td>
+<td>RS</td>
+<td>62</td>
+<td>&gt;</td>
+<td>94</td>
+<td>^</td>
+<td>126</td>
+<td>`</td>
+</tr>
+<tr>
+<td>31</td>
+<td>US</td>
+<td>63</td>
+<td>?</td>
+<td>95</td>
+<td>_</td>
+<td>127</td>
+<td>DEL</td>
+</tr>
+</tbody></table>
+<p>ASCII 码大致由以下<strong>两部分组</strong>成：</p>
+<ul>
+<li>ASCII 非打印控制字符： ASCII 表上的数字 <strong>0-31</strong> 分配给了控制字符，用于控制像打印机等一些外围设备。</li>
+<li>ASCII 打印字符：数字 <strong>32-126</strong> 分配给了能在键盘上找到的字符，当查看或打印文档时就会出现。</li>
+</ul>
+<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p><strong>作用：</strong>用于表示一些不能显示出来的ASCII字符</p>
+<p>现阶段我们常用的转义字符有：<code>\n  \\  \t</code></p>
+<table>
+<thead>
+<tr>
+<th><strong>转义字符</strong></th>
+<th><strong>含义</strong></th>
+<th><strong>ASCII</strong>码值（十进制）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\a</td>
+<td>警报</td>
+<td>007</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格(BS) ，将当前位置移到前一列</td>
+<td>008</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页(FF)，将当前位置移到下页开头</td>
+<td>012</td>
+</tr>
+<tr>
+<td><strong>\n</strong></td>
+<td><strong>换行(LF) ，将当前位置移到下一行开头</strong></td>
+<td><strong>010</strong></td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车(CR) ，将当前位置移到本行开头</td>
+<td>013</td>
+</tr>
+<tr>
+<td><strong>\t</strong></td>
+<td><strong>水平制表(HT)  （跳到下一个TAB位置）</strong></td>
+<td><strong>009</strong></td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直制表(VT)</td>
+<td>011</td>
+</tr>
+<tr>
+<td>*<em>\*</em></td>
+<td><strong>代表一个反斜线字符””</strong></td>
+<td><strong>092</strong></td>
+</tr>
+<tr>
+<td>‘</td>
+<td>代表一个单引号（撇号）字符</td>
+<td>039</td>
+</tr>
+<tr>
+<td>“</td>
+<td>代表一个双引号字符</td>
+<td>034</td>
+</tr>
+<tr>
+<td>?</td>
+<td>代表一个问号</td>
+<td>063</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>数字0</td>
+<td>000</td>
+</tr>
+<tr>
+<td>\ddd</td>
+<td>8进制转义字符，d范围0~7</td>
+<td>3位8进制</td>
+</tr>
+<tr>
+<td>\xhh</td>
+<td>16进制转义字符，h范围09，af，A~F</td>
+<td>3位16进制</td>
+</tr>
+</tbody></table>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\\&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\tHello&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\n&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="字符串型"><a href="#字符串型" class="headerlink" title="字符串型"></a>字符串型</h3><p><strong>作用</strong>：用于表示一串字符</p>
+<p><strong>两种风格</strong></p>
+<ol>
+<li><p><strong>C风格字符串</strong>： <code>char 变量名[] = &quot;字符串值&quot;</code></p>
+<p> <strong>示例：</strong></p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> str1[] = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    cout &lt;&lt; str1 &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p>注意：C风格的字符串要用双引号括起来</p>
+</blockquote>
+<ol>
+<li><p><strong>C++风格字符串</strong>：  <code>string  变量名 = &quot;字符串值&quot;</code></p>
+<p> <strong>示例：</strong></p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	string str = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">	cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p>注意：C++风格字符串，需要加入头文件#include<string></p>
+</blockquote>
+<h3 id="布尔类型-bool"><a href="#布尔类型-bool" class="headerlink" title="布尔类型 bool"></a>布尔类型 bool</h3><p><strong>作用：</strong>布尔数据类型代表真或假的值 </p>
+<p>bool类型只有两个值：</p>
+<ul>
+<li>true  — 真（本质是1）</li>
+<li>false — 假（本质是0）</li>
+</ul>
+<p><strong>bool类型占1个字节大小</strong></p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">	cout &lt;&lt; flag &lt;&lt; endl; <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">	flag = <span class="literal">false</span>;</span><br><span class="line">	cout &lt;&lt; flag &lt;&lt; endl; <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;size of bool = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">bool</span>) &lt;&lt; endl; <span class="comment">//1</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="数据的输入"><a href="#数据的输入" class="headerlink" title="数据的输入"></a>数据的输入</h3><p><strong>作用：用于从键盘获取数据</strong></p>
+<p><strong>关键字：</strong>cin</p>
+<p><strong>语法：</strong> <code>cin &gt;&gt; 变量</code></p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//整型输入</span></span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入整型变量：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; a;</span><br><span class="line">	cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//浮点型输入</span></span><br><span class="line">	<span class="keyword">double</span> d = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入浮点型变量：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; d;</span><br><span class="line">	cout &lt;&lt; d &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//字符型输入</span></span><br><span class="line">	<span class="keyword">char</span> ch = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入字符型变量：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; ch;</span><br><span class="line">	cout &lt;&lt; ch &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//字符串型输入</span></span><br><span class="line">	string str;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入字符串型变量：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; str;</span><br><span class="line">	cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//布尔类型输入</span></span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入布尔型变量：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; flag;</span><br><span class="line">	cout &lt;&lt; flag &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</div><div class="article-licensing box"><div class="licensing-title"><p>(二)cpp基础笔记之数据类型</p><p><a href="https://wonpeach.github.io/2021/11/06/二-cpp基础笔记之数据类型/">https://wonpeach.github.io/2021/11/06/二-cpp基础笔记之数据类型/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Wonpeach</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-11-06</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-11-06</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/note/">note</a><a class="link-muted mr-2" rel="tag" href="/tags/c/">c++</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/zfbhb.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wxhb.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/11/06/%E4%B8%89-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">(三)cpp基础笔记之运算符</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/11/05/%E4%B8%80-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%88%9D%E8%AF%86cpp/"><span class="level-item">(一)cpp基础笔记之初识cpp</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://wonpeach.github.io/2021/11/06/%E4%BA%8C-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/';
+            this.page.identifier = '2021/11/06/二-cpp基础笔记之数据类型/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + '不能为空' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/wxtx.jpg" alt="小涛大仙"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">小涛大仙</p><p class="is-size-6 is-block">武汉在读学生</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>湖北·武汉</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">4</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Wonpeach" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Wonpeach"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://baidu.com" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Baidu</span></span><span class="level-right"><span class="level-item tag">baidu.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">学习</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">笔记</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#数据类型"><span class="level-left"><span class="level-item">1</span><span class="level-item">数据类型</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#整型"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">整型</span></span></a></li><li><a class="level is-mobile" href="#sizeof关键字"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">sizeof关键字</span></span></a></li><li><a class="level is-mobile" href="#实型（浮点型）"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">实型（浮点型）</span></span></a></li><li><a class="level is-mobile" href="#字符型"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">字符型</span></span></a></li><li><a class="level is-mobile" href="#转义字符"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">转义字符</span></span></a></li><li><a class="level is-mobile" href="#字符串型"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">字符串型</span></span></a></li><li><a class="level is-mobile" href="#布尔类型-bool"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">布尔类型 bool</span></span></a></li><li><a class="level is-mobile" href="#数据的输入"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">数据的输入</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-05T16:10:15.000Z">2021-11-06</time></p><p class="title"><a href="/2021/11/06/%E5%85%AB-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%BB%93%E6%9E%84%E4%BD%93/">(八)cpp基础笔记之结构体</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-05T16:09:21.000Z">2021-11-06</time></p><p class="title"><a href="/2021/11/06/%E4%B8%83-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%8C%87%E9%92%88/">(七)cpp基础笔记之指针</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-05T16:08:08.000Z">2021-11-06</time></p><p class="title"><a href="/2021/11/06/%E5%85%AD-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%87%BD%E6%95%B0/">(六)cpp基础笔记之函数</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-05T16:07:06.000Z">2021-11-06</time></p><p class="title"><a href="/2021/11/06/%E4%BA%94-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E7%BB%84/">(五)cpp基础笔记之数组</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-05T16:05:30.000Z">2021-11-06</time></p><p class="title"><a href="/2021/11/06/%E5%9B%9B-cpp%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84/">(四)cpp基础笔记之程序流程结构</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c++</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/note/"><span class="tag">note</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/study/"><span class="tag">study</span><span class="tag">1</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/mylogo.svg" alt="Wonpeach的博客" height="28"></a><p class="is-size-7"><span>&copy; 2021 Wonpeach</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Wonpeach"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
